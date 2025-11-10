@@ -97,11 +97,11 @@ pnpm install
 # Supabase配置
 NEXT_PUBLIC_SUPABASE_URL=http://sbp-ikairbucachjzcos.supabase.opentrust.net
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sbp-ikairbucachjzcos
-SUPABASE_SERVICE_ROLE_KEY=RDXL0rNcSYWrGc_
+SUPABASE_SERVICE_ROLE_KEY=
 
 # AI配置
 NEXT_PUBLIC_AI_API_URL=https://bbwh.netlib.re/v1/chat/completions
-NEXT_PUBLIC_AI_API_KEY=AIzaSyCtEd5NhghUjb9wjMstZSwgLQt3MsTdRXM
+NEXT_PUBLIC_AI_API_KEY=
 NEXT_PUBLIC_AI_MODEL=gemini-2.5-pro
 
 # WebDAV配置 (需要配置)
