@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* {{ AURA: Modify - 优化自定义滚动条样式 }} */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.8);
+}
+
+/* {{ AURA: Add - 深色模式滚动条优化 }} */
+.dark .custom-scrollbar {
+  scrollbar-color: rgba(75, 85, 99, 0.6) transparent;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.6);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.9);
+}
+
+/* {{ AURA: Add - 细滚动条变体 }} */
+.custom-scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* {{ AURA: Add - 隐藏滚动条但保留滚动功能 }} */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* {{ AURA: Add - 平滑滚动 }} */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* {{ AURA: Add - 优化文本选择 }} */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark ::selection {
+  background-color: rgba(59, 130, 246, 0.5);
+}
+
+/* {{ AURA: Add - 消息进入动画 }} */
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-enter {
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+/* {{ AURA: Add - 悬停效果优化 }} */
+.message-hover {
+  transition: all 0.2s ease;
+}
+
+.message-hover:hover {
+  transform: translateY(-1px);
+}
+
+/* {{ AURA: Add - 响应式字体大小 }} */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* {{ AURA: Add - 防止内容溢出 }} */
+.message-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
