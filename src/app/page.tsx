@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 
+// {{ AURA: Add - 强制动态渲染，避免构建时预渲染 }}
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default function Home() {
   const router = useRouter()
   const [loading, setLoading] = useState(true)

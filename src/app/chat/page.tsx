@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuth } from '@/components/AuthProvider'
+
+// {{ AURA: Add - 强制动态渲染，避免构建时预渲染 }}
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 import { useToast } from '@/components/ToastProvider'
 import { useSocket } from '@/hooks/useSocket'  // {{ AURA: Add - Socket.IO支持 }}
 import CreateRoomDialog from '@/components/CreateRoomDialog'

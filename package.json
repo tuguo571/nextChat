@@ -6,7 +6,9 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "start:windows": "set NODE_ENV=production && node server.js",
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",

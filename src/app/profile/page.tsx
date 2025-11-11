@@ -6,6 +6,10 @@ import { useAuth } from '@/components/AuthProvider'
 import { useTheme } from '@/components/ThemeProvider'
 import { useToast } from '@/components/ToastProvider'
 
+// {{ AURA: Add - 强制动态渲染，避免构建时预渲染 }}
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default function ProfilePage() {
   const { user, profile, updateProfile, signOut, loading: authLoading } = useAuth()
   const { theme, setTheme, resolvedTheme } = useTheme()
